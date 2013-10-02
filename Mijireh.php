@@ -17,6 +17,7 @@ class Mijireh extends GatewayFramework {
 	var $refunds = false;
 	var $captures = false;
 	var $cards = array();
+	var $apiKey = 'bb11f2645610977a71085fe0';
 
 	function __construct () {
 		parent::__construct();
@@ -126,7 +127,7 @@ class Mijireh extends GatewayFramework {
     curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
     curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,$timeout);
     curl_setopt($curl,CURLOPT_SSL_VERIFYHOST, FALSE);
-    curl_setopt($curl, CURLOPT_USERPWD, "bb11f2645610977a71085fe0:");
+    curl_setopt($curl, CURLOPT_USERPWD, "{$apiKey}:");
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     curl_setopt($curl,CURLOPT_POST,1);
     curl_setopt($curl,CURLOPT_POSTFIELDS,$payload);
@@ -145,7 +146,7 @@ class Mijireh extends GatewayFramework {
     curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
     curl_setopt($curl,CURLOPT_CONNECTTIMEOUT,$timeout);
     curl_setopt($curl,CURLOPT_SSL_VERIFYHOST, FALSE);
-    curl_setopt($curl, CURLOPT_USERPWD, "bb11f2645610977a71085fe0:");
+    curl_setopt($curl, CURLOPT_USERPWD, "{$apiKey}:");
     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     $data = curl_exec($curl);
     curl_close($curl);
